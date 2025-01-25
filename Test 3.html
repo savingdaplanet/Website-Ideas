@@ -3,93 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savingdaplanet - Science & AI</title>
+  <title>Savingdaplanet - Science & Technology</title>
   <style>
-    /* Light Mode Styles */
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #333;
+      background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/earth_from_space.jpg'); /* Space-themed background */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
       transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
     }
-    h1, h3, p {
-      color: #333;
+
+    h1, h2, h3, p, a {
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7); /* Adding shadow for better readability */
+      font-weight: bold;
     }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #ffcc00; /* Highlight links with golden color */
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #45a049;
+    }
+
     /* Dark Mode Styles */
     body.dark-mode {
-      background-color: #333;
+      background-color: #121212;
       color: #fff;
     }
-    .dark-mode h1, .dark-mode h3, .dark-mode p {
-      color: #fff;
-    }
-    /* Scroll to Top Button */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: none;
-      border-radius: 5px;
-    }
-    #scrollTopBtn:hover {
-      background-color: #45a049;
-    }
+
     /* Images */
     img {
       max-width: 100%;
       height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      margin: 20px 0;
     }
+
+    /* Buttons */
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      display: none;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #45a049;
+    }
+
     /* Article Links */
-    a {
-      color: #4CAF50;
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
-    a:hover {
-      color: #45a049;
+
+    ul li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Content fade-in effect */
+    .fade-in {
+      animation: fadeIn 2s ease-out;
+    }
+
+    .quiz-container {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .quiz-container button {
+      margin-top: 10px;
+      padding: 10px 15px;
+    }
+
+    .question {
+      margin-bottom: 10px;
+    }
+
+    .options {
+      margin-bottom: 20px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
     }
   </style>
 </head>
 
-<body>
-  <h1 id="top">Welcome to Savingdaplanet - Exploring Science & AI</h1>
-  <img src="https://www.nasa.gov/sites/default/files/thumbnails/nasa-logo-web-rgb.png" width="100" height="100" alt="NASA Logo" />
+<body class="fade-in dark-mode">
+  <h1 id="top">Welcome to Savingdaplanet - Exploring Science & Technology</h1>
+  <img src="YOUR_IMAGE_URL_HERE" width="500" height="auto" alt="New Image" />
 
-  <h3><a href="mailto:hirecasarrubias@gmail.com">Email Me</a>
+  <h3>
+    <a href="mailto:hirecasarrubias@gmail.com" style="font-size: 1.8rem;">Email Me</a>
     <address>
-      <a href="https://www.instagram.com/savingdaplanet/" target="_blank">Ig@SavingDaPlanet</a>
-  <p>Today we will be discussing some of the latest advancements in Science and AI:</p>
+      <a href="https://www.instagram.com/savingdaplanet/" target="_blank" style="font-size: 1.8rem;">Ig@SavingDaPlanet</a>
+    </address>
+  </h3>
+
+  <div class="quiz-container">
+    <h3>Science Quiz</h3>
+    <p>Test your knowledge on science with this fun quiz!</p>
+    <div id="quiz">
+      <div class="question" id="question1">
+        <p>1. What is the chemical symbol for water?</p>
+        <div class="options">
+          <input type="radio" name="q1" value="H2O"> H2O<br>
+          <input type="radio" name="q1" value="O2"> O2<br>
+          <input type="radio" name="q1" value="CO2"> CO2<br>
+        </div>
+      </div>
+      <div class="question" id="question2">
+        <p>2. What planet is known as the Red Planet?</p>
+        <div class="options">
+          <input type="radio" name="q2" value="Mars"> Mars<br>
+          <input type="radio" name="q2" value="Jupiter"> Jupiter<br>
+          <input type="radio" name="q2" value="Venus"> Venus<br>
+        </div>
+      </div>
+      <div class="question" id="question3">
+        <p>3. What is the speed of light in vacuum? (Answer in km/s)</p>
+        <div class="options">
+          <input type="radio" name="q3" value="299792"> 299792<br>
+          <input type="radio" name="q3" value="150000"> 150000<br>
+          <input type="radio" name="q3" value="500000"> 500000<br>
+        </div>
+      </div>
+      <div class="question" id="question4">
+        <p>4. Who developed the theory of relativity?</p>
+        <div class="options">
+          <input type="radio" name="q4" value="Albert Einstein"> Albert Einstein<br>
+          <input type="radio" name="q4" value="Isaac Newton"> Isaac Newton<br>
+          <input type="radio" name="q4" value="Nikola Tesla"> Nikola Tesla<br>
+        </div>
+      </div>
+      <div class="question" id="question5">
+        <p>5. What is the powerhouse of the cell?</p>
+        <div class="options">
+          <input type="radio" name="q5" value="Mitochondria"> Mitochondria<br>
+          <input type="radio" name="q5" value="Nucleus"> Nucleus<br>
+          <input type="radio" name="q5" value="Ribosome"> Ribosome<br>
+        </div>
+      </div>
+      <button onclick="submitQuiz()">Submit Quiz</button>
+      <div id="result" class="result"></div>
+    </div>
+  </div>
+
+  <p>Today we will be discussing some of the latest advancements in Science and Technology:</p>
   <ul>
-    <li><a href="https://www.labroots.com/trending/ai-machine-learning" target="_blank">AI in Healthcare: Revolutionizing Diagnostics</a></li>
-    <li><a href="https://www.labroots.com/trending/technology/23009/ai-healthcare-advancements" target="_blank">AI Technologies Shaping the Future</a></li>
     <li><a href="https://www.nasa.gov/earth-science" target="_blank">NASA Earth Science: Understanding Our Planet</a></li>
-    <li><a href="https://www.nasa.gov/mission_pages/heliophysics/index.html" target="_blank">NASA's Heliophysics: Studying the Sun</a></li>
+    <li><a href="https://www.automotiveworld.com/news-releases/geely-unveiled-auto-industrys-first-ever-full-domain-ai-for-smart-vehicles-technology-system/" target="_blank">The Future of Crypto Policies and Economics</a></li>
+    <li><a href="https://www.technologyreview.com/" target="_blank">The Latest in Technology</a></li>
   </ul>
 
   <hr />
 
-  <h1 id="article2">Article 2: Exploring AI in Healthcare</h1>
-  <h2><i>The Impact of AI on Medical Diagnostics</i></h2>
-  <p>Artificial intelligence has been playing an increasingly significant role in healthcare diagnostics. AI systems are now being used to analyze medical images, detect diseases such as cancer and Alzheimer’s, and predict patient outcomes.</p>
-  
-  <img src="https://www.labroots.com/images/ai_in_healthcare.jpg" alt="AI in Healthcare" />
-  
-  <blockquote cite="https://www.labroots.com/trending/ai-machine-learning/16071">
-    <p>"AI algorithms are capable of analyzing vast amounts of medical data in a fraction of the time it takes for human clinicians, enabling faster and more accurate diagnoses." - LabRoots</p>
+  <h1 id="article1">Article 1: Atmospheric Pressure and Its Role</h1>
+  <h2><i>Understanding Atmospheric Pressure</i></h2>
+  <p>Atmospheric pressure is the force exerted onto a surface by the weight of the air above it. It is a crucial factor influencing weather patterns, ocean currents, and even our day-to-day activities. Atmospheric pressure is typically measured using a barometer, and its changes can indicate shifts in weather conditions.</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Barometer_reading.jpg" alt="Barometer Measuring Atmospheric Pressure" />
+  <blockquote cite="https://www.weather.gov/jetstream/pressure">
+    <p>"Atmospheric pressure is crucial for understanding weather and climate. It is the result of the weight of air molecules in the Earth's atmosphere." - NOAA</p>
   </blockquote>
 
-  <p>For more information, visit the article on LabRoots about <a href="https://www.labroots.com/trending/ai-machine-learning" target="_blank">AI in Healthcare</a>.</p>
+  <h1 id="article2">Article 2: Technology Innovations Shaping the Future</h1>
+  <h2><i>Exploring the Advancements in Technology</i></h2>
+  <p>Technology is evolving at an unprecedented rate, bringing innovations that are reshaping industries, economies, and societies. From breakthroughs in quantum computing to the growing potential of renewable energy technologies, the technological landscape is vast and rapidly changing.</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/AI_technology.jpg" alt="Technology Innovations" />
+  <blockquote cite="https://www.technologyreview.com/">
+    <p>"From robotics to new renewable technologies, the innovations in technology are transforming every sector. We are on the brink of revolutionary advancements that will change the way we live and work." - MIT Technology Review</p>
+  </blockquote>
+  <p>For more information, visit <a href="https://www.technologyreview.com/" target="_blank">MIT Technology Review</a>.</p>
 
   <h1 id="article3">Article 3: NASA and Earth Science</h1>
   <h2><i>Using Satellites to Understand Earth’s Climate</i></h2>
   <p>NASA has been at the forefront of climate science, using satellites to monitor the Earth's atmosphere, oceans, and land. This research helps scientists understand global warming, natural disasters, and how the Earth is changing over time.</p>
-
   <img src="https://www.nasa.gov/sites/default/files/thumbnails/earth_landsat_image.jpg" alt="NASA Earth Satellite" />
-
   <p>Explore the research on <a href="https://www.nasa.gov/earth-science" target="_blank">NASA's Earth Science</a> page.</p>
+
+  <h1 id="article4">Article 4: The Future of Autonomous Vehicles</h1>
+  <h2><i>Revolutionizing Transportation</i></h2>
+  <p>Autonomous vehicles are revolutionizing transportation by making roads safer and more efficient. These self-driving cars use advanced sensors and algorithms to interpret their surroundings, make decisions, and navigate without human intervention.</p>
+  <img src="https://www.nasa.gov/sites/default/files/thumbnails/av_logo.jpg" alt="Autonomous Vehicle Concept" />
+  <p>Learn more about autonomous vehicles in this article about <a href="https://www.automotiveworld.com/news-releases/ai-driving-the-future-of-transportation/" target="_blank">The Future of Transportation</a>.</p>
 
   <p><a href="#top">Back to Top</a></p>
 
@@ -123,7 +278,33 @@
 
     // Welcome Pop-up
     window.onload = function() {
-      alert("Welcome to Milk Cats! Explore the wonders of Science and AI!");
+      alert("Welcome to Savingdaplanet! Explore the wonders of Science and Technology!");
+    }
+
+    // Quiz functionality
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "H2O",
+        q2: "Mars",
+        q3: "299792",
+        q4: "Albert Einstein",
+        q5: "Mitochondria"
+      };
+
+      let score = 0;
+      const totalQuestions = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.textContent = `Your score is ${score} out of ${totalQuestions}.`;
+
+      alert(`You scored ${score} out of ${totalQuestions}!`);
     }
   </script>
 
