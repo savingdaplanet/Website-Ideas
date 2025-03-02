@@ -35,3 +35,124 @@
             <p>Assembly of the X-59 took place at Lockheed Martin’s Skunk Works facility in Palmdale, California, where engineers worked diligently to bring the aircraft to life. Significant advancements were made in constructing its eXternal Vision System (XVS), an innovative solution that provides pilots with a forward-looking view through a high-tech display system, compensating for the absence of a traditional cockpit window.</p>
 
             <p>The X-59’s major components, including the F414-GE-100 turbofan engine, the aircraft’s vertical tail, and its iconic, elongated nose, have been successfully installed, marking key milestones in the timeline of the project.</p>
+
+            <p>In recent months, NASA's focus has shifted to conducting community overflights to further assess the sonic thump created during flight and share findings with regulators, who are expected to review data that might inspire a change in laws against supersonic travel over land.</p>
+
+            <p>As part of the Low-Boom Flight Demonstration mission, NASA is also working on refining tools for shockwave visualization, in-flight pressure measurement, and acoustic validation to ensure the aircraft meets its quiet flight objectives.</p>
+
+            <p>This mission updates the aviation landscape, breathing new potential into air travel for future generations, and reflects NASA’s ongoing commitment to transforming the industry through innovative aeronautical research.</p>
+        </div>
+        <aside class="sidebar">
+            <h3>Key Specifications</h3>
+            <ul class="quick-facts">
+                <li><strong>Length:</strong> 94 feet</li>
+                <li><strong>Wingspan:</strong> 29.5 feet</li>
+                <li><strong>Speed:</strong> Over 1,000 mph</li>
+                <li><strong>Engine:</strong> F414-GE-100</li>
+                <li><strong>Maximum Altitude:</strong> 55,000 feet</li>
+                <li><strong>Test Location:</strong> California</li>
+                <li><strong>First Flight:</strong> Achieved in 2024</li>
+            </ul>
+
+            <h3>Milestones</h3>
+            <ul class="quick-facts">
+                <li><strong>2021:</strong> Completed aircraft assembly.</li>
+                <li><strong>2022:</strong> Initiated ground testing.</li>
+                <li><strong>2023:</strong> Completed first flight.</li>
+                <li><strong>2024:</strong> Conducted community overflights to gather sonic thump data.</li>
+            </ul>
+
+            <h3>Images</h3>
+            <img src="https://www.nasa.gov/wp-content/uploads/2025/01/p25-007-03.jpg" alt="NASA X-59 Image 1" class="sidebar-image">
+            <p>NASA's X-59 with its distinctive long nose.</p>
+            <img src="https://www.nasa.gov/wp-content/uploads/2025/01/p25-007-04.jpg" alt="NASA X-59 Image 2" class="sidebar-image">
+            <p>Another view of the X-59 aircraft.</p>
+            <img src="https://www.nasa.gov/wp-content/uploads/2025/01/p25-007-01.jpg" alt="NASA X-59 Image 3" class="sidebar-image">
+            <p>The X-59 during construction.</p>
+
+            <h3>More Information</h3>
+            <ul>
+                <li><a href="https://www.nasa.gov/gallery/x-59-afterburner-testing-gallery/" target="_blank">X-59 Afterburner Testing Gallery</a></li>
+                <li><a href="https://www.nasa.gov/image-article/diamonds-from-nasas-x-59/" target="_blank">Diamonds from NASA's X-59</a></li>
+                <li><a href="https://www.nasa.gov/missions/nasa-takes-delivery-of-ge-jet-engine-for-x-59/" target="_blank">NASA Takes Delivery of GE Jet Engine for X-59</a></li>
+                <li><a href="https://www.nasa.gov/?search=afterburner+x-59&content_type=gallery" target="_blank">More X-59 Resources</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="engagement-section">
+        <h3>Community Engagement</h3>
+
+        <h4>Poll: What do you think about supersonic flight?</h4>
+        <div class="poll">
+            <form>
+                <label><input type="radio" name="poll" value="yes"> Yes</label><br>
+                <label><input type="radio" name="poll" value="no"> No</label><br>
+                <label><input type="radio" name="poll" value="not sure"> Not Sure</label><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <h4>Upcoming Events</h4>
+        <div class="calendar">
+            <div class="event">X-59 Test Flight - March 15, 2025</div>
+            <div class="event">Community Feedback Session - April 10, 2025</div>
+            <div class="event">New Regulations Discussion - May 20, 2025</div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="parallax-text">
+            <small>Photos by: <a href="https://www.nasa.gov/press-release/nasa-achieves-key-milestone-with-x-59-afterburner-engine-test">NASA</a></small>
+        </div>
+    </footer>
+    
+    <button id="topButton" class="top-button" style="display:none;">Back to Top</button>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+
+    <script>
+        // Function to apply the dark mode based on the preference stored in localStorage
+        const applyDarkMode = () => {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').textContent = 'Switch to Light Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.getElementById('darkModeToggle').textContent = 'Switch to Dark Mode';
+            }
+        };
+
+        // Automatically apply dark mode if it was previously enabled
+        applyDarkMode();
+
+        // Scroll to Top functionality
+        const topButton = document.getElementById('topButton');
+
+        // Show the button when scrolling down
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        };
+
+        topButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dark Mode Toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = 'Switch to Light Mode';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
