@@ -1,0 +1,42 @@
+// Get references to the necessary DOM elements
+const topButton = document.getElementById('topButton');
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+// Function to handle scrolling to the top of the page smoothly
+topButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Function to apply dark mode based on the preference stored in localStorage
+const applyDarkMode = () => {
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled'; // Check if dark mode is enabled
+    document.body.classList.toggle('dark-mode', darkModeEnabled);           // Toggle dark mode class based on preference
+
+    // Update the toggle button text based on the current mode
+    darkModeToggle.textContent = darkModeEnabled ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+};
+
+// Automatically apply dark mode if it was previously enabled
+applyDarkMode();
+
+// Dark Mode Toggle functionality
+darkModeToggle.addEventListener('click', () => {
+    // Toggle the dark mode class on the body
+    document.body.classList.toggle('dark-mode');
+
+    // Save the user's preference to localStorage
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    
+    // Update the toggle button text based on the current mode
+    darkModeToggle.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+});
+
+// Show/hide the "Back to Top" button based on scroll position
+window.onscroll = () => {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topButton.style.display = "block"; // Show the button
+    } else {
+        topButton.style.display = "none";  // Hide the button
+    }
+};
