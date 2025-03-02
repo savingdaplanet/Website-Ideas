@@ -1,0 +1,288 @@
+/** Base **/
+:root {
+    --background-color: #f5f5f5; /* Light mode background color */
+    --text-color: #333;          /* Light mode text color */
+    --accent-color: #D72677;     /* Accent color for links and buttons */
+    --footer-bg-color: #2c2c2c;  /* Dark background color for the footer */
+}
+
+body {
+    font-family: 'Eczar', sans-serif;
+    font-weight: 400;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for dark mode */
+}
+
+body.dark-mode {
+    --background-color: #1f1f1f;  /* Dark mode background color */
+    --text-color: #e0e0e0;        /* Dark mode text color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Eczar", sans-serif;
+}
+
+h2 {
+    font-size: 4vw;              /* Responsive size */
+    max-font-size: 36px;        /* Cap size for larger screens */
+    font-weight: 700;
+    margin: 40px 0 16px;
+    text-align: left;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    color: var(--accent-color);   /* Accent color for headings */
+}
+
+p {
+    font-family: 'Gentium Basic', serif;
+    margin-top: 16px;
+    font-size: 18px;             /* Base size for desktops */
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;     /* Smooth transition for link hover */
+}
+
+a:hover {
+    color: rgb(220, 25, 119);   /* Darkening the `--accent-color` for hover effect */
+}
+
+.footer {
+    color: white;                /* Maintain white text color for the footer */
+    background-color: var(--footer-bg-color); /* Dark footer background color */
+    padding: 16px;              /* Reduced padding */
+    text-align: center;         /* Centering footer text */
+}
+
+.section {
+    margin: 0 auto;
+    max-width: 700px;           /* Slightly wider sections */
+    padding: 0 20px;            /* Adjusted padding for better spacing */
+    display: flex;              /* Creating a flex container */
+}
+
+/** Utils **/
+.container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.nasa.gov/wp-content/uploads/2025/01/p25-007-03.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom; /* Keeping the image position */
+}
+
+.hero__title {
+    position: absolute;
+    bottom: 20vh;                /* Increased space for title */
+    left: 5vw;                   /* Responsive left positioning */
+    right: 5vw;                  /* Responsive right positioning */
+    z-index: 1;
+    font-size: calc(30px * 2);   /* Adjusted for better visibility */
+    line-height: 1.2;
+    color: white;                /* Keeping the text color */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adding subtle text shadow */
+}
+
+.hero__subtitle {
+    position: absolute;
+    bottom: 15vh;                /* Keeping position unchanged for the subtitle */
+    left: 10vw;                  /* Adjusted for responsive positioning */
+    right: 10vw;                 /* Adjusted for responsive positioning */
+    color: white;                 
+    text-align: center;          /* Keeping color unchanged for the subtitle */
+    font-family: 'Gentium Basic', serif;
+    font-size: 34px;             /* Base size for subtitles */
+}
+
+/** Sidebar Styles **/
+.sidebar {
+    flex: 1;
+    background: var(--background-color); /* Light background for sidebar (Light Mode) */
+    color: var(--text-color); /* Text color for sidebar */
+    padding: 15px;
+}
+
+body.dark-mode .sidebar {
+    background: #444;           /* Dark background for sidebar (Dark Mode) */
+    color: var(--text-color);   /* Text color for sidebar in dark mode */
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar img {
+    width: 100%;                 /* Make images responsive */
+    height: auto;                /* Maintain aspect ratio */
+    max-width: 300px;            /* Limits the max width of the image */
+    margin: 10px 0;              /* Spacing around the image */
+}
+
+.quick-facts {
+    list-style-type: none;       /* Remove list bullets */
+    padding: 0;                  /* Remove default padding */
+    margin-top: 10px;            /* Add some margin above the list */
+}
+
+.quick-facts li {
+    margin-bottom: 5px;          /* Space between facts */
+    font-size: 14px;             /* Font size adjustment for facts */
+}
+
+/** Poll Styles **/
+.poll {
+    background: #e0e0e0;         /* Light gray background for the poll section */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;              /* Spacing above and below the poll */
+}
+
+body.dark-mode .poll {
+    background: #333;            /* Dark background for poll in dark mode */
+    color: #e0e0e0;              /* Light text color for visibility */
+}
+
+.poll h4 {
+    margin-bottom: 10px;         /* Space below poll title */
+}
+
+.poll label {
+    display: block;
+    margin: 5px 0;               /* Space between poll options */
+}
+
+/** Calendar Styles **/
+.calendar {
+    background: #e0e0e0;         /* Light gray background for the calendar */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;              /* Spacing above and below the calendar */
+}
+
+body.dark-mode .calendar {
+    background: #333;            /* Dark background for calendar in dark mode */
+    color: #e0e0e0;              /* Light text color for visibility */
+}
+
+.calendar h4 {
+    margin-bottom: 10px;         /* Space below calendar title */
+}
+
+.calendar .event {
+    background: var(--accent-color); /* Accent color for events */
+    color: white;                /* White text for events */
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;              /* Space between events */
+}
+
+/** Button Styles **/
+.top-button {
+    position: fixed;
+    bottom: 100px;               /* Adjust the value based on how much overlap you want with the footer */
+    right: 20px;                 /* Position on the right */
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;               /* Ensure it's on top of everything else */
+    transition: background-color 0.3s; /* Smooth transition for button hover */
+}
+
+.top-button:hover {
+    background-color: rgba(215, 38, 119, 0.8); /* Slightly darkened for hover effect */
+}
+
+/** Animation **/
+.animation {
+    &--floating {
+        animation-name: floating;
+        animation-duration: 200000ms;
+        animation-iteration-count: infinite;
+    }
+    &--title-in {
+        animation: title-in 800ms forwards ease-in-out 750ms;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(5%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes title-in {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-25%);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/** Media Queries **/
+@media (max-width: 768px) {
+    h2 {
+        font-size: 6vw;           /* Responsive font size for mobile */
+    }
+
+    p {
+        font-size: 4.5vw;         /* Responsive font size for paragraphs */
+    }
+
+    .hero__title {
+        bottom: 25vh;              /* Adjusted spacing for mobile */
+        font-size: 32px;           /* Adjusted for mobile */
+    }
+
+    .hero__subtitle {
+        bottom: 20vh;              /* Adjusted spacing for mobile */
+        font-size: 20px;           /* Adjusted for mobile */
+    }
+
+    .section {
+        padding: 0 10px;          /* Reduced padding for smaller screens */
+        flex-direction: column;    /* Stack elements in the section for smaller screens */
+    }
+
+    .sidebar {
+        margin-top: 20px;         /* Add margin for visual separation on smaller screens */
+    }
+}
